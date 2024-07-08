@@ -3,16 +3,17 @@ const router = require('express').Router()
 const productControllers = require('../controllers/productControllers');
 
 // Create 
-router.post('/api/products',);
+router.post('/',productControllers.createProducts);
 
 // GET ALL BY PRODUCTS
-router.get('/api/products',)
+router.get('/',productControllers.getAllProducts)
 // GET PRODUCTS BY ID
-router.get('/api/products/:id',)
-
-
-router.put('/api/products/:id',);
+router.get('/:id',productControllers.getById)
+// UPDATE
+router.put('/:id',productControllers.updateProducts);
 // DELETE
-router.delete('/api/products/:id',)
+router.delete('/:id',productControllers.deletedProduct)
 // DELETE ALL PRODUCTS
-    router.delete('/api/products',)
+router.delete('/',productControllers.allDeletedProducts)
+
+module.exports = router;
