@@ -4,6 +4,7 @@ const app = express();
 app.use(express.json());//MIDDLEWARE -> converting body(string) in json 
 require('dotenv').config();
 const productRoutes = require('./routes/productRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 
 
@@ -14,6 +15,7 @@ mongoose
 
 
 app.use('/api/products',productRoutes);
+app.use('/api/user',userRoutes);
 
 app.listen(8086,()=>{
     console.log("server started");

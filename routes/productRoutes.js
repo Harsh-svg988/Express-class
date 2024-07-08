@@ -4,7 +4,6 @@ const productControllers = require('../controllers/productControllers');
 
 // Create 
 router.post('/',productControllers.createProducts);
-
 // GET ALL BY PRODUCTS
 router.get('/',productControllers.getAllProducts)
 // GET PRODUCTS BY ID

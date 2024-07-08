@@ -16,17 +16,9 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    isActive: {
-        type: Boolean,
-        default: true
     }
+
 });
 
 // Create a model using the schema
-const User = mongoose.model('User', UserSchema);
-module.exports = User;
+module.exports = mongoose.model('user', UserSchema);
