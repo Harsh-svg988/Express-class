@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require("mongoose");
-
 const app = express();
 app.use(express.json());//MIDDLEWARE -> converting body(string) in json 
+require('dotenv').config();
 
 // // CUSTOM MIDDLEWARE
 // app.use((req, res, next) => {
@@ -70,32 +70,13 @@ app.use(express.json());//MIDDLEWARE -> converting body(string) in json
 
 
 mongoose
-.connect(
-    "mongodb+srv://harshprabhakar305:cTRN02FlZU7eVeyM@cluster0.tjk0pix.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-)
+.connect("mongodb+srv://harshprabhakar305:cTRN02FlZU7eVeyM@cluster0.tjk0pix.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...', err));
 
-    // PRODUCT SCHEMA
-    const productSchema = new mongoose.Schema({
-        product_name: {
-            type: String,
-            required: true
-        },
-        product_price :{
-            type: String,
-            required: true
-        },
-        isInStock :{
-            type: Boolean,
-            required: true
-        },
-        Category:{
-            type: String,
-            required: true
-        } 
-    })
+    
+    
 
-app.listen(3000,()=>{
+app.listen(8086,()=>{
     console.log("server started");
 });
